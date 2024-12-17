@@ -1,106 +1,22 @@
-import React, { useState } from "react";
-import { Meteors } from "../components/meteorAnimation.tsx"; // Adjust the path to Meteors component
-import Image from "next/image";
+import React from "react";
+import { Meteors } from "../components/meteorAnimation.tsx";
+import TimerBoxes from "../components/timerBoxes"; // New TimerBoxes component
 
-const PaperSubmission = () => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [dragging, setDragging] = useState(false);
-
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragging(false);
-
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      setSelectedFile(e.dataTransfer.files[0]);
-      e.dataTransfer.clearData();
-    }
-  };
-
-  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setSelectedFile(e.target.files[0]);
-    }
-  };
-
-  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragging(true);
-  };
-
-  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setDragging(false);
-  };
-
-  const handleSubmit = () => {
-    if (selectedFile) {
-      alert(`File submitted: ${selectedFile.name}`);
-    } else {
-      alert("Please select a file before submitting.");
-    }
-  };
-
+const IndexPage: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen bg-gray-900 text-white flex items-center justify-between">
-      {/* Meteor animation */}*{" "}
-      <div className="absolute inset-0 z-0">
-        <Meteors number={30} />
-      </div>
-      {/* Logo on the left */}
-      <div className="relative z-10 ml-8">
-        <Image
-          src="/images/Official Logo ΣΦΗΜΜΥ 16 for dark.png" // Replace with your actual logo path
-          alt="Logo"
-          width={400}
-          height={400}
-          className="object-contain"
+    <div className="relative bg-gray-900 h-screen w-screen flex flex-col items-center justify-center text-white overflow-hidden">
+      <Meteors /> {/* Background animation runs smoothly */}
+      <div className="flex flex-col items-center -mt-40">
+        <img
+          src="/images/Official Logo ΣΦΗΜΜΥ 16 for dark.png"
+          alt="ΣΦΗΜΜΥ Logo"
+          className="h-[600px] mb-4"
         />
-      </div>
-      {/* File upload area */}
-      <div className="relative z-10 flex flex-col items-center justify-center mr-16 bg-gray-800 p-6 rounded-lg shadow-lg w-1/2">
-        <h1 className="text-2xl font-bold mb-6 text-center">
-          Submit Your Paper
-        </h1>
-        <div
-          onDrop={handleDrop}
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
-          className={`border-2 border-dashed ${
-            dragging ? "border-blue-400" : "border-gray-400"
-          } rounded-lg p-6 w-full text-center`}
-        >
-          <p className="text-lg mb-4">
-            {selectedFile
-              ? `Selected File: ${selectedFile.name}`
-              : "Drag and drop your file here or click below to upload."}
-          </p>
-          <input
-            type="file"
-            id="fileUpload"
-            accept=".pdf"
-            onChange={handleFileSelect}
-            className="hidden"
-          />
-          <label
-            htmlFor="fileUpload"
-            className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg"
-          >
-            Select File
-          </label>
-        </div>
-
-        <button
-          onClick={handleSubmit}
-          className="mt-6 bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg"
-        >
-          Submit
-        </button>
+        <h1 className="text-4xl mb-4">We are coming soon</h1>
+        <TimerBoxes endTime="2025-04-28" /> {/* Timer logic runs separately */}
       </div>
     </div>
   );
 };
 
-export default PaperSubmission;
+export default IndexPage;
