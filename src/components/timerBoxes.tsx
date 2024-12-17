@@ -40,7 +40,7 @@ const TimerBoxes: React.FC<TimerBoxesProps> = ({ endTime }) => {
       {Object.values(timeLeft).map((value, index) => (
         <div
           key={index}
-          className="flex items-center justify-center bg-[#737AB5] text-gray-100 text-6xl font-bold w-32 h-32 rounded-lg shadow-lg"
+          className="flex items-center justify-center bg-[#737AB5] text-gray-100 font-bold w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 text-2xl sm:text-3xl md:text-6xl rounded-lg shadow-lg"
         >
           {value.toString().padStart(2, "0")}
         </div>

@@ -1,11 +1,9 @@
-//meme page for when the link doesnt exist
-
 import React from "react";
 import { Meteors } from "../components/meteorAnimation.tsx";
 
 const NotFoundPage = () => {
   return (
-    <div className="relative w-full h-screen bg-gray-900 flex flex-col justify-center items-center">
+    <div className="fixed top-0 left-0 w-full h-full bg-gray-900 flex flex-col justify-center items-center overflow-hidden">
       {/* Meteor animation */}
       <div className="absolute inset-0 z-0">
         <Meteors number={50} />
@@ -23,7 +21,7 @@ const NotFoundPage = () => {
         {/* Travolta GIF */}
         <div className="w-full flex justify-center">
           <img
-            src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExODl0a3hieWV4bWt5dThtYjFkNDlud2JtcjN3b2d1MmY0bHVsc3RocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UdM6BoaQyIZHMU7YHu/giphy.gif" // Replace with your local or hosted link
+            src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExODl0a3hieWV4bWt5dThtYjFkNDlud2JtcjN3b2d1MmY0bHVsc3RocyZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/UdM6BoaQyIZHMU7YHu/giphy.gif" // Replace with your local or hosted link
             alt="Confused Travolta"
             className="w-64 h-64 sm:w-96 sm:h-96 object-contain"
           />
