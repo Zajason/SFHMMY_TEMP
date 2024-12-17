@@ -13,7 +13,7 @@ const IndexPage: React.FC = () => {
           className="h-[600px] mb-4"
         />
         <h1 className="text-4xl mb-4">We are coming soon</h1>
-        <TimerBoxes endTime="2025-04-28" /> {/* Timer logic runs separately */}
+        <TimerBoxes endTime="2025-04-25" /> {/* Timer logic runs separately */}
       </div>
     </div>
   );
