@@ -32,15 +32,15 @@ const IndexPage: React.FC = () => {
           >
             Call for Papers
           </a>
-          {/* PreΣΦΗΜΜΥ Button */}
+          {/* PreΣΦΗΜΜΥ Button 
           <a
-            href="https://pre-sfhmmy.vercel.app/"
+            href="https://presfhmmy.sfhmmy.gr/"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 text-sm sm:text-base md:text-lg font-semibold rounded-lg shadow-md bg-[#77bb4e] hover:bg-[#6aa944] transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
           >
             PreΣΦΗΜΜΥ
-          </a>
+          </a>*/}
         </div>
       </div>
     </div>
