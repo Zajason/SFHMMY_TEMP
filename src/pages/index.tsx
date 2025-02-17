@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Meteors } from "../components/meteorAnimation.tsx";
 import TimerBoxes from "../components/timerBoxes";
 
 const IndexPage: React.FC = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   return (
     <div className="relative bg-gray-900 h-screen w-screen flex flex-col items-center justify-center text-white overflow-hidden">
